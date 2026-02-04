@@ -97,9 +97,8 @@
                 e.preventDefault();
 
                 let saveBtn = $('#saveBtn');
-                let originalText = saveBtn.html();  // Save original HTML (in case you add icons later)
+                let originalText = saveBtn.html(); 
 
-                // Show loading state
                 saveBtn
                     .prop('disabled', true)
                     .html(`
@@ -141,7 +140,7 @@
                         'Accept': 'application/json'
                     },
                     success: function(response) {
-                        // Restore button
+                
                         saveBtn
                             .prop('disabled', false)
                             .html(originalText);
@@ -154,7 +153,7 @@
                         }
                     },
                     error: function(xhr) {
-                        // Restore button on error too
+                       
                         saveBtn
                             .prop('disabled', false)
                             .html(originalText);
@@ -184,7 +183,7 @@
                 });
             });
 
-           // Edit Button
+         
             $(document).on('click', '.editBtn', function() {
                 let id = $(this).data('id');
                 
@@ -195,7 +194,7 @@
                     $('#product_price').val(data.product_price);
                     $('#product_description').val(data.product_description);
 
-                    // Show existing images with delete buttons
+                  
                     let imagesHtml = '';
                     if (data.images && data.images.length > 0) {
                         imagesHtml = data.images.map(img => `
@@ -218,7 +217,7 @@
                 });
             });
 
-            // Delete Button
+            
             $(document).on('click', '.deleteBtn', function() {
                 let id = $(this).data('id');
                 if (confirm('Are you sure?')) {
@@ -235,7 +234,7 @@
                 }
             });
 
-            // Delete individual image
+           
             $(document).on('click', '.delete-image-btn', function() {
                 let imageId = $(this).data('image-id');
                 let btn = $(this);
@@ -264,7 +263,7 @@
                 }
             });
 
-            // Add Button
+           
             $('#addBtn').click(function() {
                 resetForm();
                 $('#modalTitle').text('Add Product');
