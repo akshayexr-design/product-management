@@ -13,7 +13,6 @@
     <div class="container mt-5">
         <h1>Product Management</h1>
 
-        <!-- Add/Edit Form (Modal) -->
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#productModal" id="addBtn">Add Product</button>
         <div class="modal fade" id="productModal" tabindex="-1">
             <div class="modal-dialog">
